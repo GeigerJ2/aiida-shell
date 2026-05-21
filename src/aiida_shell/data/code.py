@@ -16,11 +16,6 @@ class ShellCode(InstalledCode):
     calculation job as well.
     """
 
-    class Model(InstalledCode.Model):
-        """Model describing required information to create an instance."""
-
-        default_calc_job_plugin: t.Optional[str] = 'core.shell'
-
     def __init__(self, *args: t.Any, default_calc_job_plugin: str = 'core.shell', **kwargs: t.Any) -> None:
         """Construct a new instance."""
         self.validate_default_calc_job_plugin(default_calc_job_plugin)
